@@ -1,0 +1,14 @@
+{
+    "name": "datatables.net-colfilter",
+    "version": "1.0.0",
+    "description": "Datatables extension allow filter by column",
+    "repository": {
+        "type": "git",
+        "url": "git@git.tuxgasy.fr:sm2i/datatables.net-colfilter.git"
+    },
+    "author": "Garcia MICHEL",
+    "license": "MIT",
+    "dependencies": {
+        "datatables.net-dt": "^1.10.0"
+    }
+}
