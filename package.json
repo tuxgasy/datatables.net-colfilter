@@ -4,7 +4,7 @@
     "description": "Datatables extension allow filter by column",
     "repository": {
         "type": "git",
-        "url": "git@git.tuxgasy.fr:sm2i/datatables.net-colfilter.git"
+        "url": "https://github.com/tuxgasy/datatables.net-colfilter.git"
     },
     "author": "Garcia MICHEL",
     "license": "MIT",
