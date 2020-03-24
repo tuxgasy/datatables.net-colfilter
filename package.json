@@ -1,6 +1,6 @@
 {
     "name": "datatables.net-colfilter",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Datatables extension allow filter by column",
     "main": "./js/datatables.net-colfilter.js",
     "repository": {

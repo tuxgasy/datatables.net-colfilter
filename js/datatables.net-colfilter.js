@@ -42,8 +42,8 @@
         ctx._colFilter.filter = $(FILTER_SELECTOR);
         ctx._colFilter.filterInput = $('input'+FILTER_SELECTOR);
         ctx._colFilter.filterSelect = $('select'+FILTER_SELECTOR);
-        ctx._colFilter.filterApply = $(FILTER_APPLY_SELECTOR);
-        ctx._colFilter.filterReset = $(FILTER_RESET_SELECTOR);
+        ctx._colFilter.filterApplyButton = $(FILTER_APPLY_SELECTOR);
+        ctx._colFilter.filterResetButton = $(FILTER_RESET_SELECTOR);
 
         // Handle input apply
         ctx._colFilter.filterInput.keypress(function(e) {
@@ -52,16 +52,20 @@
                 return true;
             }
 
-            ctx._colFilter.filterApply.trigger('click');
+            ctx._colFilter.filterApply();
             return false;
         });
 
         ctx._colFilter.filterSelect.change(function(e) {
-            ctx._colFilter.filterApply.trigger('click');
+            ctx._colFilter.filterApply();
         });
 
         // Apply all filters
-        ctx._colFilter.filterApply.click(function(e) {
+        ctx._colFilter.filterApplyButton.click(function(e) {
+            ctx._colFilter.filterApply();
+        });
+
+        ctx._colFilter.filterApply = function() {
             $.each(ctx._colFilter.filter, function(index, item) {
                 if ($(item).data('col-filter') == undefined && $(item).data('col-name-filter') == undefined) {
                     return;
@@ -74,10 +78,10 @@
             });
 
             dt.draw();
-        });
+        };
 
         // Reset all filters
-        ctx._colFilter.filterReset.click(function(e) {
+        ctx._colFilter.filterResetButton.click(function(e) {
             dt.search('').columns().search('');
 
             $.each(ctx._colFilter.filter, function(index, item) {
